@@ -1,4 +1,5 @@
 import bz2, os, sys, shutil, math
+import filecmp
 
 input = "test.csv"
 output = input+".bz2"
@@ -24,5 +25,7 @@ print("Compressed file Size is :", output_size, "bytes")
 decomp_size = os.path.getsize(decomp)
 print("Decompressed file Size is :", decomp_size, "bytes")
 
-reduction = ((input_size-output_size)/input_size)*100
+reduction = round(((input_size-output_size)/input_size)*100)
 print("Compression ratio : " + str(reduction) + "%")
+
+print(filecmp.cmp(input, decomp, shallow=True))#checks if original file and decompressed file is the same
