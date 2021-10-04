@@ -4,11 +4,11 @@ input = "test.csv"
 output = input+".bz2"
 decomp = "decompressed.csv"
 
-
+#compression
 with open(input, mode="rb") as fin, bz2.open(output, "wb") as fout:
     fout.write(fin.read())
 
-
+#decompression
 with bz2.open(output, 'rb') as f_in:
     with open(decomp, 'wb') as f_out:
         shutil.copyfileobj(f_in, f_out)
