@@ -1,7 +1,7 @@
 import bz2, os, sys, shutil, math
 import filecmp
 
-input = "test.csv"
+input = "Test1.csv"
 output = input+".bz2"
 
 #compression
