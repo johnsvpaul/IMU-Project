@@ -2,6 +2,7 @@ import time
 import smbus
 import math
 import datetime
+import sys
 
 Gyro  = [0,0,0]
 Accel = [0,0,0]
@@ -431,6 +432,9 @@ class LPS22HB(object):
  
 if __name__ == '__main__':
   import time
+
+  parameter = sys.argv[1]
+
   print("\nSense HAT Test Program ...\n")
   MotionVal=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
   icm20948=ICM20948()
@@ -438,7 +442,7 @@ if __name__ == '__main__':
   TEMP_DATA = 0.0
   u8Buf=[0,0,0]
   lps22hb=LPS22HB()
-  file = open("Test1.csv",'w')
+  file = open(parameter,'w')
   file.write("Time, MagX, MagY, MagZ, AccX, AccY, AccZ, GyroX, GyroY, GyroZ, Temp, Pres, Yaw, Pitch, Roll\n")
   start = time.time()
   for x in range(300):

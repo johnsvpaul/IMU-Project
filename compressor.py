@@ -1,8 +1,12 @@
 import bz2, os, sys, shutil, math
 import filecmp
+import sys
 
-input = "Test1.csv"
+parameter = sys.argv[1]
+input = parameter
 output = input+".bz2"
+
+
 
 #compression
 with open(input, mode="rb") as fin, bz2.open(output, "wb") as fout:
