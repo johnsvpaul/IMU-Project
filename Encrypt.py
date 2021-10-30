@@ -42,7 +42,7 @@ def __unpad(plain_text):
 parameter = sys.argv[1]
 
 # Using readlines()
-file1 = open('parameter', 'r+b')
+file1 = open(parameter, 'r+b')
 Lines = file1.readlines()
 
 # writing to file
