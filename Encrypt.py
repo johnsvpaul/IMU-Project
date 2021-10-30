@@ -3,6 +3,7 @@ from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
 import zipfile
+import sys
 
 
 #def __init__(key):
@@ -38,10 +39,10 @@ def __unpad(plain_text):
         return plain_text[:-bytes_to_remove]
 
 
-
+parameter = sys.argv[1]
 
 # Using readlines()
-file1 = open('output1.csv.bz2', 'r+b')
+file1 = open('parameter', 'r+b')
 Lines = file1.readlines()
 
 # writing to file
