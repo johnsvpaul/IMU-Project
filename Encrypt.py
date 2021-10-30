@@ -39,14 +39,14 @@ def __unpad(plain_text):
         return plain_text[:-bytes_to_remove]
 
 
-parameter = sys.argv[1]
+parameter = "output1.csv.bz2"
 
 # Using readlines()
 file1 = open(parameter, 'r+b')
 Lines = file1.readlines()
 
 # writing to file
-file2 = open('Zippedfile1.txt', 'w')
+file2 = open('Zippedfile5.csv', 'w')
  
 count = 0
 # Strips the newline character
@@ -60,4 +60,5 @@ for line in Lines:
         
 file1.close()
 file2.close()
+print("encrypt complete")
 
