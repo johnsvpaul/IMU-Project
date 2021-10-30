@@ -20,17 +20,17 @@ while (x < 3):
  else:
   raise ValueError("%s isn't a file!" % fn) 
 
- #fn2 = "output" + str(x) + ".csv.bz2"
- #fn2 = "2018-09-19-03_57_11_VN100.zip"
+ fn2 = "output" + str(x) + ".csv.bz2"
+ 
 
- #while not os.path.exists(fn2):                       #encryption
-  #time.sleep(1)
+ while not os.path.exists(fn2):                       #encryption
+  time.sleep(1)
     
- #if os.path.isfile(fn2):
- #subprocess.call('python Encrypt.py '+ fn2  , shell = True)
+ if os.path.isfile(fn2):
+  subprocess.call('python Encrypt.py '+ fn2  , shell = True)
         
- #else:
-        #raise ValueError("%s isn't a file!" % fn2)  
+ else:
+  raise ValueError("%s isn't a file!" % fn2)  
                               
  x = x + 1
  
