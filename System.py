@@ -27,7 +27,7 @@ while (x < 3):
   time.sleep(1)
     
  if os.path.isfile(fn2):
-  subprocess.call('python Encrypt.py '+ fn2  , shell = True)
+  subprocess.call('python3 Encrypt.py '+fn2  , shell = True)
         
  else:
   raise ValueError("%s isn't a file!" % fn2)  
