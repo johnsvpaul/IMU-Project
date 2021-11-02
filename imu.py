@@ -435,7 +435,7 @@ if __name__ == '__main__':
 
   parameter = sys.argv[1]
 
-  print("\nSense HAT Test Program ...\n")
+  print("\nWriting IMU data to CSV file ...\n")
   MotionVal=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
   icm20948=ICM20948()
   PRESS_DATA = 0.0
@@ -445,11 +445,11 @@ if __name__ == '__main__':
   file = open(parameter,'w')
   file.write("Time, MagX, MagY, MagZ, AccX, AccY, AccZ, GyroX, GyroY, GyroZ, Temp, Pres, Yaw, Pitch, Roll\n")
   start = time.time()
-  for x in range(300):
+  for x in range(20): # rows of data in csv file
     icm20948.icm20948_Gyro_Accel_Read()
     icm20948.icm20948MagRead()
     icm20948.icm20948CalAvgValue()
-    time.sleep(0.1)
+    time.sleep(1) # interval time
     icm20948.imuAHRSupdate(MotionVal[0] * 0.0175, MotionVal[1] * 0.0175,MotionVal[2] * 0.0175,
                 MotionVal[3],MotionVal[4],MotionVal[5],
                 MotionVal[6], MotionVal[7], MotionVal[8])

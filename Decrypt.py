@@ -39,7 +39,7 @@ def __unpad(plain_text):
         return plain_text[:-bytes_to_remove]
 
 
-parameter = sys.argv[1]
+parameter = "Encryptedoutput1.csv.bz2"
 
 
 

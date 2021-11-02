@@ -40,13 +40,13 @@ def __unpad(plain_text):
 
 
 parameter = sys.argv[1]
-
+output = "Encypted" + sys.argv[1]
 # Using readlines()
 file1 = open(parameter, 'r+b')
 Lines = file1.readlines()
 
 # writing to file
-file2 = open('Zippedfile6.csv', 'w')
+file2 = open(output, 'w')
  
 count = 0
 # Strips the newline character
